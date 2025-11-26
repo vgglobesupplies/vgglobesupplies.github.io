@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG Globe Supplies | Premium Medical Equipment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a5276;
+            --secondary: #3498db;
+            --accent: #2ecc71;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 15px auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .contact-info span {
+            margin-right: 20px;
+        }
+        
+        .contact-info i {
+            margin-right: 5px;
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.6)), url('2.avif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: #f5f7fa;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Why Choose Us Section */
+        .why-us {
+            background-color: white;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: #f5f7fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: """;
+            font-size: 80px;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f5f7fa;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail i {
+            font-size: 20px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                box-shadow: var(--shadow);
+                padding: 20px 0;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* FAQ Section */
+.faq {
+    background-color: #f5f7fa;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+.faq-question h3 {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.faq-toggle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+/* Privacy Policy Section */
+/* Privacy Policy Section */
+.privacy-policy {
+    background-color: white;
+}
+
+.policy-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.policy-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    background-color: #f8f9fa;
+}
+
+.policy-question:hover {
+    background-color: #e9ecef;
+}
+
+.policy-question h3 {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.policy-toggle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary);
+    transition: transform 0.3s;
+}
+
+.policy-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.policy-answer p {
+    padding: 20px 0 10px 0;
+}
+
+.policy-answer ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.policy-answer li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.policy-item.active .policy-answer {
+    max-height: 1000px;
+}
+
+.policy-item.active .policy-toggle {
+    transform: rotate(45deg);
+}
+
+.policy-update {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    margin-top: 30px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> 121 W Lexington Dr STE B110 Glendale CA 91203</span>
+                    <span><i class="fas fa-phone"></i> 747-295-9894</span>
+                </div>
+                <div class="email">
+                    <span><i class="fas fa-envelope"></i> vgglobesupplies@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <h1>VG Globe <span>Supplies</span></h1>
+                </div>
+                <nav>
+                    <div class="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                          <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Premium Medical Equipment for Enhanced Living</h2>
+            <p>Providing high-quality, advanced medical supplies and accessibility solutions for those who deserve the very best in comfort and independence.</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About VG Globe Supplies</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>VG Globe Supplies is a premier supplier of high-end medical and accessibility equipment. We provide everything necessary for enhanced living, specializing in advanced wheelchairs, automatic massage beds, and a comprehensive range of luxury medical products designed for superior comfort and independence.</p>
+                    <p>Our mission is to improve the quality of life for individuals with disabilities by offering premium products that combine cutting-edge technology with exceptional comfort and durability.</p>
+                    <p>With years of experience in the medical supply industry, our team is dedicated to helping you find the perfect solutions for your specific needs.</p>
+                    <a href="#contact" class="btn">Contact Us Today</a>
+                </div>
+                <div class="about-image">
+                    <img src="10.avif" alt="VG Globe Supplies Medical Equipment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="11.avif" alt="Premium Wheelchairs">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Mobility Solutions</h3>
+                        <p>Explore our collection of advanced, ergonomic wheelchairs designed for unparalleled comfort and daily ease. Featuring cutting-edge technology and premium materials.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="1.avif" alt="Automatic Massage Beds">
+                    </div>
+                    <div class="product-info">
+                        <h3>Automatic Therapeutic Beds</h3>
+                        <p>Experience the future of rest and recovery with our automatic massage beds, featuring state-of-the-art technology for personalized therapy and ultimate comfort.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="3.avif" alt="Medical Equipment">
+                    </div>
+                    <div class="product-info">
+                        <h3>High-End Medical Equipment</h3>
+                        <p>A curated selection of sophisticated medical devices and monitors for proactive health management, featuring the latest innovations in medical technology.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="14.avif" alt="Daily Living Aids">
+                    </div>
+                    <div class="product-info">
+                        <h3>Daily Living Aids</h3>
+                        <p>Innovative systems to assist with organization and daily tasks, promoting greater independence and improving quality of life for individuals with mobility challenges.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="15.avif" alt="Therapy Equipment">
+                    </div>
+                    <div class="product-info">
+                        <h3>Therapy & Rehabilitation</h3>
+                        <p>Advanced physical therapy equipment designed to aid recovery, improve mobility, and enhance overall physical function with professional-grade quality.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="16.avif" alt="Home Care Equipment">
+                    </div>
+                    <div class="product-info">
+                        <h3>Home Care Solutions</h3>
+                        <p>Comprehensive home care equipment that brings professional medical capabilities to residential settings, ensuring safety and comfort for patients and caregivers.</p>
+                        <a href="#contact" class="btn btn-secondary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose VG Globe Supplies</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-award"></i>
+                    <h3>Premium Quality</h3>
+                    <p>We source only the highest quality medical equipment from trusted manufacturers worldwide.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Expert Consultation</h3>
+                    <p>Our team of medical equipment specialists provides personalized guidance for your specific needs.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>We ensure prompt delivery of all products with careful handling and white-glove service.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Dedicated Support</h3>
+                    <p>Our customer service team is available to assist you with any questions or concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Product Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="2.avif" alt="Advanced Wheelchair">
+                    <div class="gallery-overlay">
+                        <h3>Advanced Mobility Wheelchair</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="1.avif" alt="Hospital Bed">
+                    <div class="gallery-overlay">
+                        <h3>Adjustable Hospital Bed</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="3.avif" alt="Medical Monitor">
+                    <div class="gallery-overlay">
+                        <h3>Medical Monitoring Equipment</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="5.avif" alt="Therapy Equipment">
+                    <div class="gallery-overlay">
+                        <h3>Physical Therapy Equipment</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="6.avif" alt="Medical Supplies">
+                    <div class="gallery-overlay">
+                        <h3>Medical Supplies & Accessories</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="7.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Daily Living Assistance Devices</h3>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="8.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Daily Living Assistance Devices</h3>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="9.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Daily Living Assistance Devices</h3>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="11.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Advanced Mobility Wheelchair</h3>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="12.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Daily Living Assistance Devices</h3>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="13.avif" alt="Daily Living Aids">
+                    <div class="gallery-overlay">
+                        <h3>Daily Living Assistance</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>The automatic massage bed I purchased from VG Globe Supplies has transformed my recovery process. The quality is exceptional and the customer service was outstanding.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Physical Therapy Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>As a healthcare provider, I trust VG Globe Supplies for all our medical equipment needs. Their products are reliable, durable, and their team is incredibly knowledgeable.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen">
+                        <div>
+                            <h4>Dr. Michael Chen</h4>
+                            <p>Medical Director, Rehabilitation Center</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>The wheelchair we purchased for my father has made such a difference in his mobility and comfort. The staff at VG Globe helped us select the perfect model for his needs.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Rodriguez">
+                        <div>
+                            <h4>Maria Rodriguez</h4>
+                            <p>Family Caregiver</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+<section class="faq" id="faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-content">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What types of payment do you accept?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and we also offer financing options for qualifying customers on purchases over $1,000. For institutional purchases, we can arrange invoice billing.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer installation services for your equipment?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer professional installation services for all our premium equipment. Our certified technicians will deliver, set up, and demonstrate how to use your equipment properly. Installation fees vary based on the complexity of the equipment.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is your warranty policy?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>All our products come with manufacturer warranties ranging from 1-5 years depending on the equipment. Additionally, we offer extended warranty options for most products. Our team will provide complete warranty documentation with your purchase.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you work with insurance companies?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we work with most major insurance providers and Medicare/Medicaid. Our team can help you navigate the insurance process and provide necessary documentation. Please contact us with your insurance information so we can verify coverage.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is your delivery timeframe?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Standard delivery takes 10-17 business days within California and 22-25 business days nationwide. For urgent needs, we offer expedited shipping options. Custom or specialized equipment may require additional time for delivery.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer rental options for equipment?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer short-term and long-term rental options for many of our products. This is ideal for temporary needs or for customers who want to try equipment before purchasing. Contact us for rental availability and pricing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Policy Section -->
+<!-- Privacy Policy Section -->
+<section class="privacy-policy" id="privacy">
+    <div class="container">
+        <h2 class="section-title">Privacy Policy</h2>
+        <div class="policy-content">
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>Information We Collect</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>VG Globe Supplies collects information that you provide directly to us, including:</p>
+                    <ul>
+                        <li>Personal identification information (Name, email address, phone number, etc.)</li>
+                        <li>Medical information necessary for equipment recommendations</li>
+                        <li>Billing and shipping addresses</li>
+                        <li>Payment information (processed securely through our payment partners)</li>
+                        <li>Communication preferences</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>How We Use Your Information</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Process your transactions and send related information</li>
+                        <li>Respond to your comments, questions, and requests</li>
+                        <li>Send you technical notices, updates, and support messages</li>
+                        <li>Communicate with you about products, services, and promotional offers</li>
+                        <li>Monitor and analyze trends, usage, and activities in connection with our services</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>Information Sharing</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties except in the following circumstances:</p>
+                    <ul>
+                        <li>With your consent</li>
+                        <li>To comply with legal obligations</li>
+                        <li>To protect and defend our rights and property</li>
+                        <li>With service providers who assist in our operations (under strict confidentiality agreements)</li>
+                        <li>In connection with business transfers (merger, acquisition, or sale of assets)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>Data Security</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                </div>
+            </div>
+            
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>Your Rights</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Access and receive a copy of your personal information</li>
+                        <li>Rectify or update your personal information</li>
+                        <li>Delete your personal information</li>
+                        <li>Restrict or object to our processing of your personal information</li>
+                        <li>Data portability</li>
+                        <li>Withdraw consent at any time</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-item">
+                <div class="policy-question">
+                    <h3>Contact Us</h3>
+                    <span class="policy-toggle">+</span>
+                </div>
+                <div class="policy-answer">
+                    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                    <p>VG Globe Supplies<br>
+                    121 W Lexington Dr STE B110<br>
+                    Glendale, CA 91203<br>
+                    Phone: 747-295-9894<br>
+                    Email: vgglobesupplies@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- <div class="policy-update">
+                <p><strong>Last updated:</strong> January 1, 2024</p>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>We're here to help you find the perfect medical equipment solutions. Reach out to us with any questions or to schedule a consultation.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>121 W Lexington Dr STE B110<br>Glendale, CA 91203</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>747-295-9894</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>vgglobesupplies@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product" name="product">
+                                <option value="">Select a product category</option>
+                                <option value="wheelchairs">Premium Wheelchairs</option>
+                                <option value="beds">Automatic Massage Beds</option>
+                                <option value="medical">Medical Equipment</option>
+                                <option value="therapy">Therapy & Rehabilitation</option>
+                                <option value="daily">Daily Living Aids</option>
+                                <option value="home">Home Care Solutions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>VG Globe Supplies</h3>
+                    <p>Providing premium medical equipment and accessibility solutions for enhanced quality of life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#products">Premium Wheelchairs</a></li>
+                        <li><a href="#products">Automatic Massage Beds</a></li>
+                        <li><a href="#products">Medical Equipment</a></li>
+                        <li><a href="#products">Therapy & Rehabilitation</a></li>
+                        <li><a href="#products">Daily Living Aids</a></li>
+                        <li><a href="#products">Home Care Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 121 W Lexington Dr STE B110, Glendale, CA 91203</li>
+                        <li><i class="fas fa-phone"></i> 747-295-9894</li>
+                        <li><i class="fas fa-envelope"></i> vgglobesupplies@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 VG Globe Supplies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after clicking a link
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+
+        // FAQ Toggle Functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+    });
+});
+
+// FAQ Toggle Functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+    });
+});
+
+// Privacy Policy Toggle Functionality
+document.querySelectorAll('.policy-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const policyItem = question.parentElement;
+        policyItem.classList.toggle('active');
+    });
+});
+    </script>
+</body>
+</html>
